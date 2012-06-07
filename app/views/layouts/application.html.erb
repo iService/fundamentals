@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Fundamentals</title>
+		<%= stylesheet_link_tag "application" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body class="<%= params[:controller] %>">
+		<div id="container">
+			<div id="user_nav">
+				<% if person_signed_in? -%>
+			  		Signed in as <%= current_person.email %>. Not you?
+			    	<%= link_to "Sign out", destroy_person_session_path, :method => :delete %>
+					<%= link_to_unless_current "Edit profile", edit_person_registration_path %>
+			  	<% else -%>
+			  		<%= link_to "Sign up", new_person_registration_path %> or <%= link_to "sign in", new_person_session_path %>
+			  	<% end -%>
+			</div>
+			<% flash.each do |name, msg| %>
+				<%= content_tag :div, msg, :id => "flash_#{name}" %>
+			<% end %>
+			<%= yield %>
+		</div>
+	</body>
+</html>

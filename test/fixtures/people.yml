@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  surname: MyString
+  family: MyString
+  pin: MyString
+  id_card_number: MyString
+  id_card_issue_date: 2012-06-06 14:15:51
+
+two:
+  name: MyString
+  surname: MyString
+  family: MyString
+  pin: MyString
+  id_card_number: MyString
+  id_card_issue_date: 2012-06-06 14:15:51
